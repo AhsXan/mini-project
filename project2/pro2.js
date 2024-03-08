@@ -1,23 +1,20 @@
 const form = document.querySelector("form")
 
-form.addEventListener('submit', (e) => {
-    
-e.preventDefault()
-
+form.addEventListener("submit", (e)=> {
+    e.preventDefault();
 const height = parseInt(document.querySelector("#height").value)
 const weight = parseInt(document.querySelector("#weight").value)
-const results= document.querySelector("#results")
+const result = document.querySelector("#results")
 
-if (height < 0 || height === ""|| isNaN(height)){
-    results.innerHTML= "Enter a Valid Number"
+if (height === "" || isNaN(height) || (height < 0 )){
+
+    result.innerHTML= "Please Enter a Valid Number"
 }
+else if (weight === "" || isNaN(weight) || (weight < 0 )){
 
-else if (height < 0 || height === ""|| isNaN(height)){
-    results.innerHTML= "Enter a Valid Number"
+    result.innerHTML= `<span>Please Enter a Valid Number</span>`
 }
-
-else{ 
- results.innerHTML= (weight /((height*height)/10000)).toFixed(2)
+else {
+    result.innerHTML = (weight / ((height* height) / 10000)).toFixed(2)
 }
-
-});
+})
