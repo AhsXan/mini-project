@@ -31,7 +31,7 @@ else if (guess<1){
     alert("Enter Value Greater then 1")
 }
 else if (guess>100){
-    alert("Enter Value Less then 100")
+    alert("Enter Value Less then 100.")
 
 }
 else {
